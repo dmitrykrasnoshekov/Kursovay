@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float upLimit = -50;
+    [SerializeField] private float downLimit = 50;
     [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float mousSens = 0.25f;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask interactive; //ДОБАВИТЬ К ПРЕФАБУ МАСКУ
+    [SerializeField] private GameObject Camera;
     private Vector3 lastInteractDir;
 
     private void Start()
     {
+        Cursor.visible = false;
         gameInput.OnInteractAction += GameInput_OnInteractAction;
     }
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
-
+        // Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        // Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+        Vector3 moveDir = transform.forward;
         if (moveDir != Vector3.zero)
         {
             lastInteractDir = moveDir;
         }
 
-        float interactDistance = 2f;
+        float interactDistance = 1f;
 
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, interactive))
         {
@@ -36,62 +41,26 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HandleMovement();
+        HandleCameraRotation();
         HandleInteractions();
+
     }
 
     private void HandleMovement() //Вызывается в Update
     {
+
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        float moveDistance = moveSpeed * Time.deltaTime;
-        float playerRadius = 0.7f; // поменять под модельку
-        float playerHeight = 2f; // поменять под модельку
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
-
-        if (!canMove)
-        {
-
-            //возможно можно двигаться по x
-            Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
-            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
-
-            if (canMove)
-            {
-                moveDir = moveDirX;
-            }
-            else
-            {
-                //Возможно можно двигаться только по z
-                Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
-                canMove= !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
-
-                if (canMove)
-                {
-                    moveDir = moveDirZ;
-                }
-                else
-                {
-                    //Нельзя двигаться
-                }
-            }
-        }
-
-        if (canMove)
-        {
-            transform.position += moveDir * moveSpeed * Time.deltaTime;
-        }
+        transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.Self);
 
 
-        float rotateSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
     }
 
     private void HandleInteractions() //Вызывается в Update
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+        Vector3 moveDir = transform.forward;
 
         if (moveDir != Vector3.zero)
         {
@@ -104,8 +73,20 @@ public class Player : MonoBehaviour
         {
             if (raycastHit.transform.TryGetComponent(out BaseInteractiveElement baseInteractiveElement))
             {
-                //baseInteractiveElement.Interact();
+                //можно взаимодействовать
             }
         }
     }
+    private void HandleCameraRotation()
+    {
+        float horizontalRotation = Input.GetAxis("Mouse X");
+        float verticalRotation = Input.GetAxis("Mouse Y");
+        transform.Rotate(0, horizontalRotation * mousSens, 0);
+        Camera.transform.Rotate(-verticalRotation * mousSens, 0, 0);
+        Vector3 currentRotation = Camera.transform.localEulerAngles;
+        if (currentRotation.x > 180) currentRotation.x -= 360;
+        currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
+        Camera.transform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
 }
