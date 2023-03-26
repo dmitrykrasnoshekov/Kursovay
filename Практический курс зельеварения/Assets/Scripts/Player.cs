@@ -13,8 +13,16 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask interactive; //днаюбхрэ й опетюас люяйс
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject interactText;
+
+    public static Player Instance { get; private set; }
     private BaseInteractiveElement selected;
     private Vector3 lastInteractDir;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
 
     private void Start()
     {
