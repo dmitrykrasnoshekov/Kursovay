@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject interactText;
 
+    private Ray interactRay;
+    private RaycastHit interactHit;
+    private Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+
     public static Player Instance { get; private set; }
     private BaseInteractiveElement selected;
     private Vector3 lastInteractDir;
@@ -40,6 +44,7 @@ public class Player : MonoBehaviour
     {
         HandleMovement();
         HandleCameraRotation();
+        InteractRay();
         HandleInteractions();
 
     }
@@ -56,6 +61,11 @@ public class Player : MonoBehaviour
 
     }
 
+    private void InteractRay()
+    {
+        interactRay = Camera.GetComponent<Camera>().ScreenPointToRay(screenCenter);
+    }
+
     private void HandleInteractions() //Âûחûגאועסÿ ג Update
     {
         Vector3 moveDir = transform.forward;
@@ -69,9 +79,10 @@ public class Player : MonoBehaviour
 
         float interactDistance = 1f;
 
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, interactive))
+        if (Physics.Raycast(interactRay, out interactHit, interactDistance, interactive))
         {
-            if (raycastHit.transform.TryGetComponent(out BaseInteractiveElement baseInteractiveElement))
+            Debug.DrawRay(interactRay.origin, interactRay.direction * interactDistance, Color.red);
+            if (interactHit.transform.TryGetComponent(out BaseInteractiveElement baseInteractiveElement))
             {
                 interactText.SetActive(true);
                 if (baseInteractiveElement != selected)
