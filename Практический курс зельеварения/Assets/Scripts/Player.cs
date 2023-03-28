@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask interactive; //днаюбхрэ й опетюас люяйс
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject interactText;
+    [SerializeField] private LayerMask pickUpLayerMask;
+    [SerializeField] private Transform objectGrabPointTransform;
+
+    private ObjectGrab objectGrab;
 
     private Ray interactRay;
     private RaycastHit interactHit;
@@ -46,6 +50,7 @@ public class Player : MonoBehaviour
         HandleCameraRotation();
         InteractRay();
         HandleInteractions();
+        HandlePickUpDrop();
 
     }
 
@@ -81,7 +86,6 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(interactRay, out interactHit, interactDistance, interactive))
         {
-            Debug.DrawRay(interactRay.origin, interactRay.direction * interactDistance, Color.red);
             if (interactHit.transform.TryGetComponent(out BaseInteractiveElement baseInteractiveElement))
             {
                 interactText.SetActive(true);
@@ -110,6 +114,28 @@ public class Player : MonoBehaviour
         if (currentRotation.x > 180) currentRotation.x -= 360;
         currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
         Camera.transform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    private void HandlePickUpDrop()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (objectGrab == null)
+            {
+                float pickUpDistance = 2f;
+                if (Physics.Raycast(interactRay, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+                {
+                    if (raycastHit.transform.TryGetComponent(out objectGrab))
+                    {
+                        objectGrab.Grab(objectGrabPointTransform);
+                    }
+                }
+            } else
+            {
+                objectGrab.Drop();
+                objectGrab = null;
+            }
+        }
     }
 
 }
