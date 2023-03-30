@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             lastInteractDir = moveDir;
         }
 
-        float interactDistance = 1f;
+        float interactDistance = 2f;
 
         if (Physics.Raycast(interactRay, out interactHit, interactDistance, interactive))
         {
@@ -92,6 +92,18 @@ public class Player : MonoBehaviour
                 if (baseInteractiveElement != selected)
                 {
                     selected = baseInteractiveElement;
+                }
+            }
+            else if (interactHit.transform.TryGetComponent(out CraftingKettle craftingKettle))
+            {
+                interactText.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    craftingKettle.NextRecipe();
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    craftingKettle.Craft();
                 }
             }
             else

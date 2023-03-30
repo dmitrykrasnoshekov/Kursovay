@@ -17,10 +17,10 @@ public class BaseInteractiveElement : MonoBehaviour
     public void Interact()
     {
         Debug.Log("Interact");
-        Transform frogLegTransform =  Instantiate(ingridientsSO.prefab, spawnPoint);
-        frogLegTransform.localPosition = Vector3.zero;
+        Transform IngridientTransform =  Instantiate(ingridientsSO.prefab, spawnPoint);
+        IngridientTransform.localPosition = Vector3.zero;
 
-        Debug.Log(frogLegTransform.GetComponent<Ingridients>().GetIngridientsSO().objectName);
+        Debug.Log(IngridientTransform.GetComponent<Ingridients>().GetIngridientsSO().objectName);
     }
 
     private Transform SpawnPoint()

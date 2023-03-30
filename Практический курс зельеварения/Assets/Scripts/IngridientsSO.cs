@@ -6,5 +6,6 @@ using UnityEngine;
 public class IngridientsSO : ScriptableObject
 {
     public Transform prefab;
+    public Ingridients.IngridientType type;
     public string objectName;
 }
