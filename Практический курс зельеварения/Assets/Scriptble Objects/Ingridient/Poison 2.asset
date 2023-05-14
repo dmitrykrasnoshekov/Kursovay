@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18aba13d0fff810488fff0860f601dfa, type: 3}
+  m_Name: Poison 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4410026004967880948, guid: e6e2d0bbc3f79ac41ada5fbcba1614e7, type: 3}
+  type: 4
+  objectName: Poison2
