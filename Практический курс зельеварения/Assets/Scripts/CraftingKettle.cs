@@ -11,6 +11,7 @@ public class CraftingKettle : MonoBehaviour
     [SerializeField] private BoxCollider craftCollider;
     [SerializeField] private LayerMask craftMask;
     [SerializeField] private Transform outputSpawnPoint;
+    [SerializeField] private IngridientsSO trash;
 
     private List<IngridientsSO> inputRecipe;
     private CraftingRecipeSO craftingRecipeSO;
@@ -50,11 +51,21 @@ public class CraftingKettle : MonoBehaviour
         Ingridients ingridient = collidersArray[0].gameObject.GetComponentInParent<Ingridients>();
         IngridientsSO ingridientSO = ingridient.GetIngridientsSO();
         Debug.Log(ingridientSO);
-        if (ingridientSO.objectName == inputRecipe[0].objectName)
+
+        if (ingridientSO.objectName is not null) { 
+            if ( ingridientSO.objectName == inputRecipe[0].objectName)
         {
             inputRecipe.RemoveAt(0);
             Destroy(ingridient.gameObject);
         }
+                else
+                {
+                    Destroy(ingridient.gameObject);
+                    Instantiate(trash.prefab, outputSpawnPoint.position, Quaternion.Euler(Vector3.up));
+                    NextRecipe();
+                }
+            }
+
         }
 
     }
