@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: unicornhorn
   m_EditorClassIdentifier: 
   prefab: {fileID: 7078120846989460225, guid: 677e5274907ec2b47a63d15591ae686c, type: 3}
+  sprite: {fileID: 21300000, guid: 374d1b7a08b5ca842901b301a7f3312d, type: 3}
   type: 3
   objectName: unicornhorn
+  objectDescription: 

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: crushedrabidmushroom
   m_EditorClassIdentifier: 
   prefab: {fileID: 8083346850042520549, guid: 82c71063a50f0d4439c8f4e97b37275d, type: 3}
-  type: 8
+  sprite: {fileID: 21300000, guid: 65b422a7a3c6ca841afe7c835c50f802, type: 3}
+  type: 2
   objectName: crushedrabidmushroom
+  objectDescription: 

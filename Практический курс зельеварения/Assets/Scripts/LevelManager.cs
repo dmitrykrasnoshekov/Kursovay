@@ -1,28 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
-    public const int levelStartCount = 3;
+    public const int levelStartCount = 2;
     public const int levelNumber = 3;
     int levelUnLock;
-    public Button[] buttons;
+    public Button[] button;
+    public List<TMP_Text> levelMarkText;
+    public List<GameObject> levelMarkView;
+    public int[] levelMark; 
 
-    void Start() {
-        // Cursor.visible = true;
+    private void Start() {
+        Cursor.visible = true;
 
         levelUnLock = PlayerPrefs.GetInt( "Levels", 1);
+        levelMarkText[0].text = "Mark: [" + PlayerPrefs.GetInt("levelMark1", 0).ToString() + "]";
+        levelMarkText[1].text = "Mark: [" + PlayerPrefs.GetInt("levelMark2", 0).ToString() + "]";
+        levelMarkText[2].text = "Mark: [" + PlayerPrefs.GetInt("levelMark3", 0).ToString() + "]";
 
-        for( int i = 0; i < buttons.Length; i++)
+        for ( int i = 0; i < button.Length; i++)
         {
-            buttons[i].interactable = false;
+            button[i].interactable = false;
+            levelMarkView[i].SetActive(false);
         }
 
+        Debug.Log( levelUnLock);
         for( int i = 0; i < levelUnLock; i++)
         {
-            buttons[i].interactable = true;
+            levelMarkView[i].SetActive(true);
+            button[i].interactable = true;
         }
     }
 

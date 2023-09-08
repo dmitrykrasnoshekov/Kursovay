@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: rainbowdust
   m_EditorClassIdentifier: 
   prefab: {fileID: 2015210141267550476, guid: 040c58ec72e554e48bd1a3aa6d58f5c1, type: 3}
-  type: 10
+  sprite: {fileID: 21300000, guid: d8295c1fb257fba4f949841bde00fc32, type: 3}
+  type: 5
   objectName: rainbowdust
+  objectDescription: 

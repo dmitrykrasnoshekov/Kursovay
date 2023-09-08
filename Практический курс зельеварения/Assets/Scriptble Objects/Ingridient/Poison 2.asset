@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Poison 2
   m_EditorClassIdentifier: 
   prefab: {fileID: 4410026004967880948, guid: e6e2d0bbc3f79ac41ada5fbcba1614e7, type: 3}
-  type: 4
+  sprite: {fileID: 21300000, guid: 60366571f0847344498401a221d81482, type: 3}
+  type: 7
   objectName: Poison2
+  objectDescription: 

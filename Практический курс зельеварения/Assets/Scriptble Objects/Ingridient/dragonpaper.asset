@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: dragonpaper
   m_EditorClassIdentifier: 
   prefab: {fileID: 7360694555719521540, guid: 7955b51fce0680440b95ee522aeecb1b, type: 3}
+  sprite: {fileID: 21300000, guid: f7c37085c798d8348bdb8e5516414799, type: 3}
   type: 1
-  objectName: dtagonpaper
+  objectName: dragonpaper
+  objectDescription: 

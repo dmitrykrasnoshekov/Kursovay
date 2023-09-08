@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: magicmushroom
   m_EditorClassIdentifier: 
   prefab: {fileID: 7182805282797344924, guid: e5d26ef9f4632924bb5196372b3737f9, type: 3}
+  sprite: {fileID: 21300000, guid: d258a65ec8f34bf42bca4045d3ef984f, type: 3}
   type: 2
   objectName: magicmashroom
+  objectDescription: 

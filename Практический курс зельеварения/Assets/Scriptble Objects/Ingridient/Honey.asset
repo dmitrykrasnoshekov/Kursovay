@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Honey
   m_EditorClassIdentifier: 
   prefab: {fileID: 4668146684642953683, guid: 1cc0ac0d22da1d94fb6a0ee8a3be1de9, type: 3}
+  sprite: {fileID: 21300000, guid: 32bd88065ef11fd4cbd0e7fb41708745, type: 3}
   type: 4
   objectName: "\u041C\u0435\u0434"
+  objectDescription: 

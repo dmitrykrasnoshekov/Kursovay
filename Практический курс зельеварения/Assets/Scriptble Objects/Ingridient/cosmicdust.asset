@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: cosmicdust
   m_EditorClassIdentifier: 
   prefab: {fileID: 1115446419916292224, guid: 3f482cacb0e229b408846f03d1d50fb2, type: 3}
+  sprite: {fileID: 21300000, guid: 4661e34b8b8477243900731e5b4216cc, type: 3}
   type: 5
   objectName: cosmicdust
+  objectDescription: 

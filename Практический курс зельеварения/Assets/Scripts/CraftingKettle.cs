@@ -16,6 +16,15 @@ public class CraftingKettle : MonoBehaviour
     private List<IngridientsSO> inputRecipe;
     private CraftingRecipeSO craftingRecipeSO;
 
+    private static bool successCrafting = true;
+    private static bool finishedCrafting = false;
+
+    public uint craftingAttempt = 0;
+    public IngridientsSO lastCraftedPotion;
+
+    public bool checkNeeded = false;
+    public bool TaskCompleted = false;
+
     private void Awake()
     {
         NextRecipe();
@@ -24,7 +33,7 @@ public class CraftingKettle : MonoBehaviour
     private void Update()
     {
         Craft();
-        SpawPosion();
+        SpawnPotion();
     }
     public void NextRecipe()
     {
@@ -48,46 +57,59 @@ public class CraftingKettle : MonoBehaviour
         Collider[] collidersArray = Physics.OverlapSphere(transform.TransformPoint(craftCollider.center), 0.3f, craftMask);
 
         if (collidersArray.Length >= 1) { 
-        Ingridients ingridient = collidersArray[0].gameObject.GetComponentInParent<Ingridients>();
-        IngridientsSO ingridientSO = ingridient.GetIngridientsSO();
-        Debug.Log(ingridientSO);
+            Ingridients ingridient = collidersArray[0].gameObject.GetComponentInParent<Ingridients>();
+            IngridientsSO ingridientSO = ingridient.GetIngridientsSO();
+            Debug.Log(collidersArray.Length);
 
-        if (ingridientSO.objectName is not null) { 
-            if ( ingridientSO.objectName == inputRecipe[0].objectName)
-        {
-            inputRecipe.RemoveAt(0);
-            Destroy(ingridient.gameObject);
-        }
-                else
-                {
-                    Destroy(ingridient.gameObject);
-                    Instantiate(trash.prefab, outputSpawnPoint.position, Quaternion.Euler(Vector3.up));
-                    NextRecipe();
+            if (ingridientSO.objectName is not null) {
+                Debug.Log( ingridientSO);
+
+                if( ingridientSO.objectName == inputRecipe[0].objectName) {
+                    inputRecipe.RemoveAt(0);
                 }
+                else
+                    successCrafting = false;
+
+                Destroy(ingridient.gameObject);
             }
 
         }
 
     }
-
     private bool CheckCraftDone()
     {
-        if (inputRecipe.Count == 0)
-        {
-            return true;
+        if (inputRecipe.Count == 0 || !successCrafting) {
+            finishedCrafting = true;
         }
         else
-        {
-            return false;
-        }
+            finishedCrafting = false;
+        return finishedCrafting;
     }
-    private void SpawPosion()
+    private void SpawnPotion()
     {
         if (CheckCraftDone())
         {
-            Instantiate(craftingRecipeSO.outputIngridientSO.prefab, outputSpawnPoint.position, Quaternion.Euler(Vector3.up));
-            NextRecipe();
+            if (successCrafting)
+            {
+                Instantiate(craftingRecipeSO.outputIngridientSO.prefab, outputSpawnPoint.position, Quaternion.Euler(Vector3.up));
+            }
+            else
+            {
+                Instantiate(trash.prefab, outputSpawnPoint.position, Quaternion.Euler(Vector3.up));
+            }
+
+            TaskCompleted = successCrafting;
+            checkNeeded = true;
+
+            // ѕереход к созданию следующего продукта
+            NextRecipe();   // ќбновл€ем прогресс следовани€ рецепту
+
+            craftingAttempt++;  // ќбновл€ем количество попыток в создании чего-либо
+            // —охран€ем название последнего конечного продукта, полученного из котла
+            lastCraftedPotion = craftingRecipeSO.outputIngridientSO;
+
+            finishedCrafting = false;   // ќбновл€ем значение, отвечающее за окончание создани€ продукта котла
+            successCrafting = true;     // ќбновл€ем значение, отражающее успех создани€ продукта котла
         }
     }
-
 }

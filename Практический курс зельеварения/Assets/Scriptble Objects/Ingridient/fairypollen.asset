@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: fairypollen
   m_EditorClassIdentifier: 
   prefab: {fileID: 4891248928123186984, guid: 90799e839918ffc44a77631a066a7635, type: 3}
+  sprite: {fileID: 21300000, guid: 5cbb45b4fb1c53945b8e1d5f66261e4f, type: 3}
   type: 5
   objectName: fairypollen
+  objectDescription: 

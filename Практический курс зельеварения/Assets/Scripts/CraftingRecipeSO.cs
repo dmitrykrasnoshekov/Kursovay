@@ -6,6 +6,8 @@ using UnityEngine;
 public class CraftingRecipeSO : ScriptableObject
 {
     public Sprite sprite;
+    public Sprite privateSprite;
+    public Sprite publicSprite;
     public string RecipeName;
     public List<IngridientsSO> InputIngridients;
     public IngridientsSO outputIngridientSO;

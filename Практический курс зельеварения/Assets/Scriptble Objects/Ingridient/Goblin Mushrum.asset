@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aba13d0fff810488fff0860f601dfa, type: 3}
   m_Name: Goblin Mushrum
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4569870640098268330, guid: 760555424eba1244fb33193ef7a02608, type: 3}
+  prefab: {fileID: 6090020477519366453, guid: 247d8c6d4da5068419930c44b6461ecb, type: 3}
+  sprite: {fileID: 21300000, guid: 9f2053ba38329ae41b12cd0155da28cd, type: 3}
   type: 2
-  objectName: GoblinMushrums
+  objectName: 
+  objectDescription: 

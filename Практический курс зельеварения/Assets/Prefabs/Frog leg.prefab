@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5223106427157540791}
-  - component: {fileID: -802846450288651897}
+  - component: {fileID: 2886380419192830717}
   m_Layer: 7
   m_Name: Frog leg
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &-802846450288651897
+--- !u!114 &2886380419192830717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8909066067557224454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c8f28efaadd474fa855a6fb027c09d, type: 3}
+  m_Script: {fileID: 11500000, guid: a682c904d8fed5044ab702d5225fb76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingridientsSO: {fileID: 11400000, guid: 581699c8de50ab447b4308c7ad45d5e4, type: 2}
 --- !u!1001 &6114739352725211510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +203,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a682c904d8fed5044ab702d5225fb76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5691006758698549167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348530500252267559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8f28efaadd474fa855a6fb027c09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingridientsSO: {fileID: 11400000, guid: 581699c8de50ab447b4308c7ad45d5e4, type: 2}
 --- !u!1 &7377670873811175286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 044ec6a5b789aeb48b2f55ad71b008ea, type: 3}

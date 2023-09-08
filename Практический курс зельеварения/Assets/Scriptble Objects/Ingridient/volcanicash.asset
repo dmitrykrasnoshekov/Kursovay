@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aba13d0fff810488fff0860f601dfa, type: 3}
   m_Name: volcanicash
   m_EditorClassIdentifier: 
-  prefab: {fileID: -8679921383154817045, guid: 61333a7d8f63e5142a83bef2a7ec91ef, type: 3}
+  prefab: {fileID: 5258659610656103300, guid: 083563673955f3b45911aff8848e13ba, type: 3}
+  sprite: {fileID: 21300000, guid: 3b4dd416d600bee4c945f970327a0bc3, type: 3}
   type: 5
   objectName: volcanicash
+  objectDescription: 

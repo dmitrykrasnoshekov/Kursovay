@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: waterflower
   m_EditorClassIdentifier: 
   prefab: {fileID: 4519388587425452132, guid: 4e4d8d2e5ef4f8f4097d4bb224c4ca8c, type: 3}
+  sprite: {fileID: 21300000, guid: 8cb6d74495b4ad44282d19f59ebeddb9, type: 3}
   type: 1
   objectName: waterflower
+  objectDescription: 

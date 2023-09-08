@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: mucus
   m_EditorClassIdentifier: 
   prefab: {fileID: 1260653844915762318, guid: 905ac313202b3b94bbe45f3bd03121a7, type: 3}
+  sprite: {fileID: 21300000, guid: 91b46194ce1aedc428ff740855c3f4aa, type: 3}
   type: 4
   objectName: mucus
+  objectDescription: 

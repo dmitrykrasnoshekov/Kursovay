@@ -15,10 +15,6 @@ public class Ingridients : MonoBehaviour
         Liquids,
         Spyces,
         Spoiled,
-        CrushedFlowers,
-        CrushedMushrums,
-        FriedAnimalParts,
-        ProcessedSpyces,
         Potion
     }
     public IngridientsSO GetIngridientsSO() { return ingridientsSO; }

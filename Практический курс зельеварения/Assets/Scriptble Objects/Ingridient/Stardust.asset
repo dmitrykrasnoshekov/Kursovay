@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Stardust
   m_EditorClassIdentifier: 
   prefab: {fileID: 5825048753290245196, guid: aed6817ca406a2841a27aab913c7cc25, type: 3}
+  sprite: {fileID: 21300000, guid: 6abc2468358d3ad4181a18ef81974a6d, type: 3}
   type: 5
   objectName: "\u0417\u0432\u0435\u0437\u0434\u043D\u0430\u044F \u043F\u044B\u043B\u044C"
+  objectDescription: 

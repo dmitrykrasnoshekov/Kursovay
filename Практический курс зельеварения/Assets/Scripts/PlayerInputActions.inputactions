@@ -110,6 +110,65 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f09bf197-5a15-4298-a8c6-e8990e0fae87",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "7bd986f9-fe69-46e9-9d75-06d10cf1f1b3",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "bdbb6e3b-4e68-4391-8766-bcb3ec433960",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Button Confirm",
+                    "type": "Button",
+                    "id": "072fdf62-bffa-43f1-912e-365d31a142bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e6290905-544e-4df7-bf96-f8a09e43f036",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c2e4fe7-856e-44fd-a9d5-abef7993e683",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

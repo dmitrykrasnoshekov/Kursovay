@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799b5bac1acd82d458112b94d32cba74, type: 3}
+  m_Name: RecipePoison 3
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 834bb878c2136334283fe60949aa5368, type: 3}
+  privateSprite: {fileID: 21300000, guid: c1f94f8078304cc4f8081cd1e508a567, type: 3}
+  publicSprite: {fileID: 21300000, guid: 834bb878c2136334283fe60949aa5368, type: 3}
+  RecipeName: Poison 3
+  InputIngridients:
+  - {fileID: 11400000, guid: 76ad6e33102bab64a95a615634609e12, type: 2}
+  - {fileID: 11400000, guid: 581699c8de50ab447b4308c7ad45d5e4, type: 2}
+  - {fileID: 11400000, guid: 952c0cf7ee60e00419b0d8ee2106c72c, type: 2}
+  - {fileID: 11400000, guid: f8e1fecce90a10d48986fcbfe3f1ab31, type: 2}
+  - {fileID: 11400000, guid: 743bcf2f4b5c9a145bb36e2a364faf33, type: 2}
+  outputIngridientSO: {fileID: 0}
+  Ingridient_liquid_1: {fileID: 0}
+  Ingridient_animalPart_2: {fileID: 0}
+  Ingridient_mushrum_3: {fileID: 0}
+  Ingridient_flower_4: {fileID: 0}
+  Ingridient_spyce_5: {fileID: 0}

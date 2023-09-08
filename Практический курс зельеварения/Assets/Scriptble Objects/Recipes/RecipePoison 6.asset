@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799b5bac1acd82d458112b94d32cba74, type: 3}
+  m_Name: RecipePoison 6
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 529ea437932f3b54db98008c2d177da7, type: 3}
+  privateSprite: {fileID: 21300000, guid: 529ea437932f3b54db98008c2d177da7, type: 3}
+  publicSprite: {fileID: 21300000, guid: f2a8ac179f5b9534da98e8a4260bdb88, type: 3}
+  RecipeName: Poison 6
+  InputIngridients:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  outputIngridientSO: {fileID: 0}
+  Ingridient_liquid_1: {fileID: 0}
+  Ingridient_animalPart_2: {fileID: 0}
+  Ingridient_mushrum_3: {fileID: 0}
+  Ingridient_flower_4: {fileID: 0}
+  Ingridient_spyce_5: {fileID: 0}

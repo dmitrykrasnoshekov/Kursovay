@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: magicdust
   m_EditorClassIdentifier: 
   prefab: {fileID: 8875068147320168643, guid: 4a4cc01263bfde3498eab432033bf808, type: 3}
-  type: 10
+  sprite: {fileID: 21300000, guid: dd34bb5f94167074f8f763125176e515, type: 3}
+  type: 5
   objectName: magicdust
+  objectDescription: 

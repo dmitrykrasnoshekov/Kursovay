@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: demonicgunpowder
   m_EditorClassIdentifier: 
   prefab: {fileID: 1751539693626196148, guid: d75ba898bf1fdb447a82836cd90fc6b5, type: 3}
-  type: 10
+  sprite: {fileID: 21300000, guid: 7ead5a73c7a74794a9c015b52d79d2ef, type: 3}
+  type: 5
   objectName: demonicgunpowder
+  objectDescription: 
